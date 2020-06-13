@@ -38,20 +38,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MutableCollectionFragmentActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.SAMPLE_CODE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".MutableCollectionViewActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.SAMPLE_CODE"/>
-            </intent-filter>
-        </activity>
-
         <activity android:name=".CardViewTabLayoutActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -59,28 +45,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".FakeDragActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.SAMPLE_CODE"/>
-            </intent-filter>
-        </activity>
-
         <activity android:name=".PageTransformerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.SAMPLE_CODE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".PreviewPagesActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.SAMPLE_CODE"/>
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".ParallelNestedScrollingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
