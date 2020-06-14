@@ -47,6 +47,7 @@ class BrowseActivity : ListActivity() {
 //        myData.add(mapOf("title" to "ViewPager2 with a Mutable Collection (Views)",       "intent" to activityToIntent(MutableCollectionViewActivity::class.java.name)))
 //        myData.add(mapOf("title" to "ViewPager2 with a Mutable Collection (Fragments)",   "intent" to activityToIntent(MutableCollectionFragmentActivity::class.java.name)))
 
+
         return myData
     }
 
