@@ -9,11 +9,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class CARDD {
+public class CARD {
     String suit;
     String value;
-    public static List<CARDD> DECKK;
-    public CARDD(String suit, String value) {
+    public static List<CARD> DECK;
+    public CARD(String suit, String value) {
         this.suit = suit;
         this.value = value;
     }
@@ -26,7 +26,7 @@ public class CARDD {
     // TODO toBundle
 
 
-    public static Set<String> SUITSS(){
+    public static Set<String> SUITS(){
         Set<String> SUITS = new HashSet<>();
         SUITS.add("♣");     /* clubs*/
         SUITS.add("♦");     /* diamonds*/
@@ -36,7 +36,7 @@ public class CARDD {
     }
 
 
-    public static Set<String> VALUESS(){
+    public static Set<String> VALUES(){
         Set<String> VALUES = new HashSet<>();
         VALUES.add("2");
         VALUES.add("3");
@@ -56,15 +56,15 @@ public class CARDD {
 
 
 
-    public static List<CARDD> getDECKK(){
-        DECKK = new ArrayList<>();
-        for (String broj: VALUESS()){
-            for (String pinkla : SUITSS()){
-                CARDD c = new CARDD(broj, pinkla);
-                DECKK.add(c);
+    public static List<CARD> getDECK(){
+        DECK = new ArrayList<>();
+        for (String broj: VALUES()){
+            for (String pinkla : SUITS()){
+                CARD c = new CARD(broj, pinkla);
+                DECK.add(c);
             }
         }
-        return DECKK;
+        return DECK;
     };
 
 
