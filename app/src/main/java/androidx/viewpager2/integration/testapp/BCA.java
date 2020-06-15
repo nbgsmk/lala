@@ -12,7 +12,7 @@ import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
-import androidx.viewpager2.integration.testapp.cards.CARD;
+import androidx.viewpager2.integration.testapp.cards.CARDD;
 import androidx.viewpager2.widget.ViewPager2;
 
 import static androidx.viewpager2.widget.ViewPager2.ORIENTATION_HORIZONTAL;
@@ -72,22 +72,48 @@ public class BCA extends FragmentActivity {
         scaleCheckBox = findViewById(R.id.scale_checkbox);
         gotoPage = findViewById(R.id.jump_button);
 
-        UIC uic = new UIC(viewPager, findViewById(R.id.disable_user_input_checkbox));
-        OC oc = new OC(viewPager, findViewById(R.id.orientation_spinner));
+        new UIC(viewPager, findViewById(R.id.disable_user_input_checkbox)).setup();
+        new OC(viewPager, findViewById(R.id.orientation_spinner)).setup();
         cardSelector.setAdapter(createCardAdapter());
 
+        viewPager.setPageTransformer(mAnimator);
+        gotoPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int card = cardSelector.getSelectedItemPosition();
+                boolean smoothScroll = smoothScrollCheckBox.isChecked();
+                viewPager.setCurrentItem(card, smoothScroll);
+            }
+        });
 
+        rotateCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.requestTransform();
+            }
+        });
 
+        translateCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.requestTransform();
+            }
+        });
 
-
+        scaleCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.requestTransform();
+            }
+        });
     }
 
 
     private SpinnerAdapter createCardAdapter() {
-        ArrayAdapter<CARD> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, CARD.DECK);
+        ArrayAdapter<CARDD> adapter = new ArrayAdapter<CARDD>(this, android.R.layout.simple_spinner_item, CARDD.DECKK);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         return adapter;
     }
 
-// TODO CARD.DECK
+
 }

@@ -6,7 +6,14 @@ import android.widget.CompoundButton;
 import androidx.viewpager2.widget.ViewPager2;
 
 public class UIC {
+    ViewPager2 viewPager;
+    CheckBox disableBox;
     public UIC(ViewPager2 viewPager, CheckBox disableBox) {
+        this.viewPager = viewPager;
+        this.disableBox = disableBox;
+    }
+
+    public void setup(){
         if (!viewPager.isUserInputEnabled()) {
             disableBox.setChecked(false);
         }

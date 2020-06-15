@@ -15,7 +15,16 @@ public class OC {
     private final String HORIZONTAL = "horizontal";
     private final String VERTICAL = "vertical";
 
+    ViewPager2 viewPager;
+    Spinner spinner;
+
     public OC(ViewPager2 viewPager, Spinner spinner) {
+        this.viewPager = viewPager;
+        this.spinner = spinner;
+
+    }
+
+    public void setup(){
         int orientation = viewPager.getOrientation();
         List<String> patka = new ArrayList<String>();
         patka.add(HORIZONTAL);
@@ -40,9 +49,7 @@ public class OC {
 
             }
         });
-
     }
-
 
     private String orientationToString(int orientation){
         if (orientation == ViewPager2.ORIENTATION_HORIZONTAL) {
