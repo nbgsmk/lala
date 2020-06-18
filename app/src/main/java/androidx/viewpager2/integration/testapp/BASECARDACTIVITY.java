@@ -18,7 +18,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import static androidx.viewpager2.widget.ViewPager2.ORIENTATION_HORIZONTAL;
 import static androidx.viewpager2.widget.ViewPager2.ORIENTATION_VERTICAL;
 
-public class BCA extends FragmentActivity {
+public class BASECARDACTIVITY extends FragmentActivity {
 
     ViewPager2 viewPager;
     Spinner cardSelector;
@@ -72,8 +72,8 @@ public class BCA extends FragmentActivity {
         scaleCheckBox = findViewById(R.id.scale_checkbox);
         gotoPage = findViewById(R.id.jump_button);
 
-        new UIC(viewPager, findViewById(R.id.disable_user_input_checkbox)).setup();
-        new OC(viewPager, findViewById(R.id.orientation_spinner)).setup();
+        new USERINPUTCONTROLLER(viewPager, findViewById(R.id.disable_user_input_checkbox)).setup();
+        new ORIENTATIONCONTROLLER(viewPager, findViewById(R.id.orientation_spinner)).setup();
         cardSelector.setAdapter(createCardAdapter());
 
         viewPager.setPageTransformer(mAnimator);

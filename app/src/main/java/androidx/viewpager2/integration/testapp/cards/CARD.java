@@ -23,6 +23,10 @@ public class CARD {
         return value + "\n" + suit;
     }
 
+    public String getValue() {
+        return value;
+    }
+
     // TODO toBundle
 
 

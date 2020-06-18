@@ -3,11 +3,12 @@ package androidx.viewpager2.integration.testapp;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.viewpager2.integration.testapp.cards.CARD;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-public class CVTL extends CVACT {
+public class CARDVIEWTABLAYOUTACTIVITY extends CARDVIEWACTIVITY {
     TabLayout tabLayout;
     int layoutId = R.layout.activity_tablayout;
 
@@ -16,8 +17,6 @@ public class CVTL extends CVACT {
         super.onCreate(savedInstanceState);
 
         tabLayout = findViewById(R.id.tabs);
-        new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> tab.setText("OBJECT " + (position + 1)))
-                .attach();
-
+        new TabLayoutMediator(tabLayout, viewPager, ((tab, position) -> tab.setText(CARD.DECK[position]).toString())).attach();
     }
 }

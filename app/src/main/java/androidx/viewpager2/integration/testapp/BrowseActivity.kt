@@ -47,7 +47,10 @@ class BrowseActivity : ListActivity() {
 //        myData.add(mapOf("title" to "ViewPager2 with a Mutable Collection (Views)",       "intent" to activityToIntent(MutableCollectionViewActivity::class.java.name)))
 //        myData.add(mapOf("title" to "ViewPager2 with a Mutable Collection (Fragments)",   "intent" to activityToIntent(MutableCollectionFragmentActivity::class.java.name)))
 
+/*
+https://stackoverflow.com/questions/54643379/use-of-viewpager2-in-android
 
+ */
         return myData
     }
 

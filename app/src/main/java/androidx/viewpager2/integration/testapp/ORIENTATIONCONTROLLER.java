@@ -11,14 +11,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class OC {
+public class ORIENTATIONCONTROLLER {
     private final String HORIZONTAL = "horizontal";
     private final String VERTICAL = "vertical";
 
     ViewPager2 viewPager;
     Spinner spinner;
 
-    public OC(ViewPager2 viewPager, Spinner spinner) {
+    public ORIENTATIONCONTROLLER(ViewPager2 viewPager, Spinner spinner) {
         this.viewPager = viewPager;
         this.spinner = spinner;
 

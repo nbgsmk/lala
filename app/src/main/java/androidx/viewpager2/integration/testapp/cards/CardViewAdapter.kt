@@ -34,8 +34,7 @@ class CardViewAdapter : RecyclerView.Adapter<CardViewHolder>() {
     }
 }
 
-class CardViewHolder internal constructor(private val cardView: CardView) :
-    RecyclerView.ViewHolder(cardView.view) {
+class CardViewHolder internal constructor(private val cardView: CardView) : RecyclerView.ViewHolder(cardView.view) {
     internal fun bind(card: Card) {
         cardView.bind(card)
     }
