@@ -33,11 +33,13 @@ public class BASECARDACTIVITY extends FragmentActivity {
     protected int layoutId = R.layout.activity_no_tablayout;
 
     public boolean isTranslateX() {
-        return ( viewPager.getOrientation() == ORIENTATION_VERTICAL && translateCheckBox.isChecked());
+        translateX = ( viewPager.getOrientation() == ORIENTATION_VERTICAL && translateCheckBox.isChecked());
+        return translateX;
     }
 
     public boolean isTranslateY() {
-        return (viewPager.getOrientation() == ORIENTATION_HORIZONTAL && translateCheckBox.isChecked());
+        translateY = (viewPager.getOrientation() == ORIENTATION_HORIZONTAL && translateCheckBox.isChecked());
+        return translateY;
     }
 
     private final ViewPager2.PageTransformer mAnimator = new ViewPager2.PageTransformer() {

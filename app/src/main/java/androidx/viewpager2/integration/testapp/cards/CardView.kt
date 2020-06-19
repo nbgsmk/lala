@@ -44,7 +44,6 @@ class CardView(layoutInflater: LayoutInflater, container: ViewGroup?) {
     fun bind(card: Card) {
         textSuite.text = card.suit
         view.setBackgroundResource(getColorRes(card))
-
         val cornerLabel = card.cornerLabel
         textCorner1.text = cornerLabel
         textCorner2.text = cornerLabel

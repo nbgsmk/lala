@@ -10,12 +10,12 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 public class CARDVIEWTABLAYOUTACTIVITY extends CARDVIEWACTIVITY {
     TabLayout tabLayout;
-    int layoutId = R.layout.activity_tablayout;
+    int layoutId;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        layoutId = R.layout.activity_tablayout;
         tabLayout = findViewById(R.id.tabs);
         new TabLayoutMediator(tabLayout, viewPager, ((tab, position) -> tab.setText(CARD.DECK[position]).toString())).attach();
     }

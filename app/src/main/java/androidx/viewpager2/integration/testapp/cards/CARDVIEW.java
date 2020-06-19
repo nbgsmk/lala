@@ -1,5 +1,6 @@
 package androidx.viewpager2.integration.testapp.cards;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,7 @@ public class CARDVIEW {
         textCorner2 = view.findViewById(R.id.label_bottom);
 
     }
+
 
     public void bind(CARD card){
         textSuite.setText(card.suit);

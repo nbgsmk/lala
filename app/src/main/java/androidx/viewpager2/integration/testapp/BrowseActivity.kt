@@ -23,6 +23,28 @@ import android.view.View
 import android.widget.ListView
 import android.widget.SimpleAdapter
 
+
+
+/*
+https://stackoverflow.com/questions/54643379/use-of-viewpager2-in-android
+
+https://developer.android.com/kotlin/campaign/learn?gclid=EAIaIQobChMI7ozelIWM6gIVysqyCh27-wtbEAAYASAAEgJWMfD_BwE&gclsrc=aw.ds
+
+https://codelabs.developers.google.com/codelabs/java-friendly-kotlin/index.html?index=..%2F..index#1
+
+https://developer.android.com/kotlin/learn?gclid=EAIaIQobChMI7ozelIWM6gIVysqyCh27-wtbEAAYASABEgJxkvD_BwE&gclsrc=aw.ds
+
+https://codelabs.developers.google.com/android-kotlin-fundamentals/
+
+
+
+https://play.kotlinlang.org/koans/Introduction/Named%20arguments/Task.kt
+
+ */
+
+
+
+
 /**
  * This activity lists all the activities in this application.
  */
@@ -47,10 +69,6 @@ class BrowseActivity : ListActivity() {
 //        myData.add(mapOf("title" to "ViewPager2 with a Mutable Collection (Views)",       "intent" to activityToIntent(MutableCollectionViewActivity::class.java.name)))
 //        myData.add(mapOf("title" to "ViewPager2 with a Mutable Collection (Fragments)",   "intent" to activityToIntent(MutableCollectionFragmentActivity::class.java.name)))
 
-/*
-https://stackoverflow.com/questions/54643379/use-of-viewpager2-in-android
-
- */
         return myData
     }
 

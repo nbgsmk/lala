@@ -13,7 +13,7 @@ public class CARDVIEWADAPTER extends RecyclerView.Adapter<CARDVIEWADAPTER.CARDVI
     @NonNull
     @Override
     public CARDVIEWHOLDER onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return CARDVIEWHOLDER(new CARDVIEW(LayoutInflater.from(parent.getContext())));
+        return CARDVIEWHOLDER(CARDVIEW(LayoutInflater.from(parent.getContext())));
     }
 
     @Override
@@ -29,7 +29,7 @@ public class CARDVIEWADAPTER extends RecyclerView.Adapter<CARDVIEWADAPTER.CARDVI
 
 
     public class CARDVIEWHOLDER extends RecyclerView.ViewHolder {
-        public CARDVIEWHOLDER(@NonNull View cardView) {
+        public CARDVIEWHOLDER(@NonNull CARDVIEW cardView) {
             super(cardView);
             cardView.bind(card);
         }
