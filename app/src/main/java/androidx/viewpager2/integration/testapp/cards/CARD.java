@@ -1,5 +1,6 @@
 package androidx.viewpager2.integration.testapp.cards;
 
+import android.os.Bundle;
 import android.text.BidiFormatter;
 
 import androidx.annotation.NonNull;
@@ -12,23 +13,41 @@ import java.util.Set;
 public class CARD {
     String suit;
     String value;
+    public static final String ARGS_BUNDLE = CARD.class.getCanonicalName() + ":Bundle";
     public static List<CARD> DECK;
     public CARD(String suit, String value) {
         this.suit = suit;
         this.value = value;
     }
 
-    String cornerlabel;
+
     public String getCornerlabel() {
         return value + "\n" + suit;
     }
 
-    public String getValue() {
-        return value;
+
+    Bundle toBundle(){
+        Bundle args = new Bundle(1);
+        args.putStringArray(ARGS_BUNDLE, new String[]{suit, value});
+        return args;
     }
 
-    // TODO toBundle
 
+    @NonNull
+    @Override
+    public String toString() {
+        BidiFormatter bidi = BidiFormatter.getInstance();
+        if (!bidi.isRtlContext()) {
+            return bidi.unicodeWrap(value + suit);
+        } else {
+            return bidi.unicodeWrap(suit + value);
+        }
+    }
+
+
+    public static class DECQ{
+        SUITS = new Set<String>();
+    }
 
     public static Set<String> SUITS(){
         Set<String> SUITS = new HashSet<>();
@@ -72,16 +91,8 @@ public class CARD {
     };
 
 
-    @NonNull
-    @Override
-    public String toString() {
-        BidiFormatter bidi = BidiFormatter.getInstance();
-        if (!bidi.isRtlContext()) {
-            return bidi.unicodeWrap(value + suit);
-        } else {
-            return bidi.unicodeWrap(suit + value);
-        }
-    }
+
+
 
 
 

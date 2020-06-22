@@ -26,6 +26,11 @@ import android.widget.SimpleAdapter
 
 
 /*
+
+Navigation graphs
+Safe args umesto Bundles
+
+
 https://stackoverflow.com/questions/54643379/use-of-viewpager2-in-android
 
 https://developer.android.com/kotlin/campaign/learn?gclid=EAIaIQobChMI7ozelIWM6gIVysqyCh27-wtbEAAYASAAEgJWMfD_BwE&gclsrc=aw.ds

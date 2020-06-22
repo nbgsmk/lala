@@ -39,12 +39,7 @@ class OrientationController(private val viewPager: ViewPager2, private val spinn
         }
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 viewPager.orientation = stringToOrientation(parent.selectedItem.toString())
             }
 

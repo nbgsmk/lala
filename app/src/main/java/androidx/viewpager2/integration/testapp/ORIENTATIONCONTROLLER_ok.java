@@ -11,25 +11,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ORIENTATIONCONTROLLER {
-    private final String HORIZONTAL = "horizontal";
-    private final String VERTICAL = "vertical";
+public class ORIENTATIONCONTROLLER_ok {
+    private final static String HORIZONTAL = "horizontal";
+    private final static String VERTICAL = "vertical";
 
     ViewPager2 viewPager;
     Spinner spinner;
 
-    public ORIENTATIONCONTROLLER(ViewPager2 viewPager, Spinner spinner) {
+    public ORIENTATIONCONTROLLER_ok(ViewPager2 viewPager, Spinner spinner) {
         this.viewPager = viewPager;
         this.spinner = spinner;
-
     }
 
     public void setup(){
         int orientation = viewPager.getOrientation();
-        List<String> patka = new ArrayList<String>();
-        patka.add(HORIZONTAL);
-        patka.add(VERTICAL);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(spinner.getContext(), android.R.layout.simple_spinner_item, patka);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(spinner.getContext(), android.R.layout.simple_spinner_item, new String[]{HORIZONTAL, VERTICAL});
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 

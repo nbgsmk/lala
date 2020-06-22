@@ -5,10 +5,10 @@ import android.widget.CompoundButton;
 
 import androidx.viewpager2.widget.ViewPager2;
 
-public class USERINPUTCONTROLLER {
+public class USERINPUTCONTROLLER_ok {
     ViewPager2 viewPager;
     CheckBox disableBox;
-    public USERINPUTCONTROLLER(ViewPager2 viewPager, CheckBox disableBox) {
+    public USERINPUTCONTROLLER_ok(ViewPager2 viewPager, CheckBox disableBox) {
         this.viewPager = viewPager;
         this.disableBox = disableBox;
     }

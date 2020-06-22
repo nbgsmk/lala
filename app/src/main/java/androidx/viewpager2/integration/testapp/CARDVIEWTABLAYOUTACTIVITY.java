@@ -8,7 +8,7 @@ import androidx.viewpager2.integration.testapp.cards.CARD;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-public class CARDVIEWTABLAYOUTACTIVITY extends CARDVIEWACTIVITY {
+public class CARDVIEWTABLAYOUTACTIVITY extends CARDVIEWACTIVITY_ok {
     TabLayout tabLayout;
     int layoutId;
 
@@ -17,6 +17,6 @@ public class CARDVIEWTABLAYOUTACTIVITY extends CARDVIEWACTIVITY {
         super.onCreate(savedInstanceState);
         layoutId = R.layout.activity_tablayout;
         tabLayout = findViewById(R.id.tabs);
-        new TabLayoutMediator(tabLayout, viewPager, ((tab, position) -> tab.setText(CARD.DECK[position]).toString())).attach();
+        new TabLayoutMediator(tabLayout, viewPager, ((tab, position) -> tab.setText((CharSequence) CARD.DECK[position]))).attach();
     }
 }

@@ -12,23 +12,17 @@ import androidx.viewpager2.integration.testapp.R;
 import java.lang.reflect.Array;
 
 public class CARDVIEW {
-    View view;
+    public View view;
     TextView textSuite;
     TextView textCorner1;
     TextView textCorner2;
 
-    int[] A = {R.color.red_100, R.color.red_300, R.color.red_500, R.color.red_700};
-    int[] B = {R.color.blue_100, R.color.blue_300, R.color.blue_500, R.color.blue_700};
-    int[] C = {R.color.green_100, R.color.green_300, R.color.green_500, R.color.green_700};
-    int[] D = {R.color.yellow_100, R.color.yellow_300, R.color.yellow_500, R.color.yellow_700};
-    int[][] COLOR_MAP = new int[][] {A, B, C, D};
 
     public CARDVIEW(LayoutInflater layoutInflater, ViewGroup container) {
         view = layoutInflater.inflate(R.layout.item_card_layout, container, false);
         textSuite = view.findViewById(R.id.label_center);
         textCorner1 = view.findViewById(R.id.label_top);
         textCorner2 = view.findViewById(R.id.label_bottom);
-
     }
 
 
@@ -44,7 +38,7 @@ public class CARDVIEW {
     private int getColorRes(CARD card){
         int shade = getShade(card);
         int color = getColor(card);
-        return COLOR_MAP[color][shade];
+        return COLOR_MAP.cmap[color][shade];
     }
 
     private int getShade(CARD card){
@@ -88,4 +82,15 @@ public class CARDVIEW {
     }
 
 
+    private static class COLOR_MAP {
+        private static int[][] cmap;
+
+        private COLOR_MAP() {
+            int[] A = new int[] {R.color.red_100, R.color.red_300, R.color.red_500, R.color.red_700};
+            int[] B = new int[] {R.color.blue_100, R.color.blue_300, R.color.blue_500, R.color.blue_700};
+            int[] C = new int[] {R.color.green_100, R.color.green_300, R.color.green_500, R.color.green_700};
+            int[] D = new int[] {R.color.yellow_100, R.color.yellow_300, R.color.yellow_500, R.color.yellow_700};
+            cmap = new int[][]{A, B, C, D};
+        }
+    }
 }

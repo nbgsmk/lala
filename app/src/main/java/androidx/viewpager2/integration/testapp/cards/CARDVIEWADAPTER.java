@@ -7,13 +7,14 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class CARDVIEWADAPTER extends RecyclerView.Adapter<CARDVIEWADAPTER.CARDVIEWHOLDER> {
+public class CARDVIEWADAPTER extends RecyclerView.Adapter<CARDVIEWHOLDER> {
 
 
     @NonNull
     @Override
     public CARDVIEWHOLDER onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return CARDVIEWHOLDER(CARDVIEW(LayoutInflater.from(parent.getContext())));
+        CARDVIEW cvok = new CARDVIEW(LayoutInflater.from(parent.getContext()), parent);
+        return new CARDVIEWHOLDER(cvok);
     }
 
     @Override
@@ -28,11 +29,18 @@ public class CARDVIEWADAPTER extends RecyclerView.Adapter<CARDVIEWADAPTER.CARDVI
     }
 
 
-    public class CARDVIEWHOLDER extends RecyclerView.ViewHolder {
-        public CARDVIEWHOLDER(@NonNull CARDVIEW cardView) {
-            super(cardView);
-            cardView.bind(card);
-        }
+
+}
+
+
+class CARDVIEWHOLDER extends RecyclerView.ViewHolder {
+    private CARDVIEW cardView;
+    public CARDVIEWHOLDER(@NonNull View itemView) {
+        super(itemView);
+        cardView = itemView;
     }
 
+    void bind(CARD card){
+        cardView.bind(card);
+    }
 }

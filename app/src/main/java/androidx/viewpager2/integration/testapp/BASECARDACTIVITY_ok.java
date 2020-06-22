@@ -18,7 +18,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import static androidx.viewpager2.widget.ViewPager2.ORIENTATION_HORIZONTAL;
 import static androidx.viewpager2.widget.ViewPager2.ORIENTATION_VERTICAL;
 
-public class BASECARDACTIVITY extends FragmentActivity {
+abstract class BASECARDACTIVITY_ok extends FragmentActivity {
 
     ViewPager2 viewPager;
     Spinner cardSelector;
@@ -28,18 +28,16 @@ public class BASECARDACTIVITY extends FragmentActivity {
     CheckBox scaleCheckBox;
     Button gotoPage;
 
-    private boolean translateX;
-    private boolean translateY;
-    protected int layoutId = R.layout.activity_no_tablayout;
+//    private boolean translateX;
+//    private boolean translateY;
+//    int layoutId = R.layout.activity_no_tablayout;
 
     public boolean isTranslateX() {
-        translateX = ( viewPager.getOrientation() == ORIENTATION_VERTICAL && translateCheckBox.isChecked());
-        return translateX;
+        return viewPager.getOrientation() == ORIENTATION_VERTICAL && translateCheckBox.isChecked();
     }
 
     public boolean isTranslateY() {
-        translateY = (viewPager.getOrientation() == ORIENTATION_HORIZONTAL && translateCheckBox.isChecked());
-        return translateY;
+        return viewPager.getOrientation() == ORIENTATION_HORIZONTAL && translateCheckBox.isChecked();
     }
 
     private final ViewPager2.PageTransformer mAnimator = new ViewPager2.PageTransformer() {
@@ -51,7 +49,12 @@ public class BASECARDACTIVITY extends FragmentActivity {
             if (isTranslateY()) { page.setTranslationY(absPos * 350f); } else { page.setTranslationY(0f); }
 
             if (scaleCheckBox.isChecked()) {
-                float scale = (absPos > 1) ? 0f : (1 - absPos);
+                float scale;
+                if (absPos > 1) {
+                    scale = 0f;
+                } else {
+                    scale = 1 - absPos;
+                }
                 page.setScaleX(scale);
                 page.setScaleY(scale);
             } else {
@@ -64,7 +67,7 @@ public class BASECARDACTIVITY extends FragmentActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layoutId);
+        setContentView(R.layout.activity_no_tablayout);
 
         viewPager = findViewById(R.id.view_pager);
         cardSelector = findViewById(R.id.card_spinner);
@@ -74,8 +77,8 @@ public class BASECARDACTIVITY extends FragmentActivity {
         scaleCheckBox = findViewById(R.id.scale_checkbox);
         gotoPage = findViewById(R.id.jump_button);
 
-        new USERINPUTCONTROLLER(viewPager, findViewById(R.id.disable_user_input_checkbox)).setup();
-        new ORIENTATIONCONTROLLER(viewPager, findViewById(R.id.orientation_spinner)).setup();
+        new USERINPUTCONTROLLER_ok(viewPager, findViewById(R.id.disable_user_input_checkbox)).setup();
+        new ORIENTATIONCONTROLLER_ok(viewPager, findViewById(R.id.orientation_spinner)).setup();
         cardSelector.setAdapter(createCardAdapter());
 
         viewPager.setPageTransformer(mAnimator);
