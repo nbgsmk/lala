@@ -12,7 +12,7 @@ import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
-import androidx.viewpager2.integration.testapp.cards.CARD;
+import androidx.viewpager2.integration.testapp.cards.CARD_ok;
 import androidx.viewpager2.widget.ViewPager2;
 
 import static androidx.viewpager2.widget.ViewPager2.ORIENTATION_HORIZONTAL;
@@ -115,7 +115,7 @@ abstract class BASECARDACTIVITY_ok extends FragmentActivity {
 
 
     private SpinnerAdapter createCardAdapter() {
-        ArrayAdapter<CARD> adapter = new ArrayAdapter<CARD>(this, android.R.layout.simple_spinner_item, CARD.DECK);
+        ArrayAdapter<CARD_ok> adapter = new ArrayAdapter<CARD_ok>(this, android.R.layout.simple_spinner_item, CARD_ok.DECK);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         return adapter;
     }

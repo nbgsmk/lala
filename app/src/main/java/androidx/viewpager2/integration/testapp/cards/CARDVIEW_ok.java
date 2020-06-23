@@ -1,6 +1,5 @@
 package androidx.viewpager2.integration.testapp.cards;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,16 +8,14 @@ import android.widget.TextView;
 import androidx.annotation.ColorRes;
 import androidx.viewpager2.integration.testapp.R;
 
-import java.lang.reflect.Array;
-
-public class CARDVIEW {
+public class CARDVIEW_ok {
     public View view;
     TextView textSuite;
     TextView textCorner1;
     TextView textCorner2;
 
 
-    public CARDVIEW(LayoutInflater layoutInflater, ViewGroup container) {
+    public CARDVIEW_ok(LayoutInflater layoutInflater, ViewGroup container) {
         view = layoutInflater.inflate(R.layout.item_card_layout, container, false);
         textSuite = view.findViewById(R.id.label_center);
         textCorner1 = view.findViewById(R.id.label_top);
@@ -26,7 +23,7 @@ public class CARDVIEW {
     }
 
 
-    public void bind(CARD card){
+    public void bind(CARD_ok card){
         textSuite.setText(card.suit);
         view.setBackgroundResource(getColorRes(card));
         String cornerLabel = card.getCornerlabel();
@@ -35,14 +32,14 @@ public class CARDVIEW {
     }
 
     @ColorRes
-    private int getColorRes(CARD card){
+    private int getColorRes(CARD_ok card){
         int shade = getShade(card);
         int color = getColor(card);
         return COLOR_MAP.cmap[color][shade];
     }
 
-    private int getShade(CARD card){
-        switch (card.getValue()){
+    private int getShade(CARD_ok card){
+        switch (card.value){
             case "2":
             case "6":
             case "10":
@@ -67,7 +64,7 @@ public class CARDVIEW {
         throw new  IllegalStateException("Card value can not be " + card.value);
     }
 
-    private int getColor(CARD card){
+    private int getColor(CARD_ok card){
         switch (card.suit){
             case "♣":
                 return 0;
