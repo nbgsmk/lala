@@ -45,6 +45,8 @@ https://codelabs.developers.google.com/android-kotlin-fundamentals/
 
 https://play.kotlinlang.org/koans/Introduction/Named%20arguments/Task.kt
 
+https://stackoverflow.com/questions/54643379/proper-implementation-of-viewpager2-in-android
+
  */
 
 
@@ -64,8 +66,8 @@ class BrowseActivity : ListActivity() {
     private fun getData(): List<Map<String, Any>> {
         val myData = mutableListOf<Map<String, Any>>()
 
-        myData.add(mapOf("title" to "ViewPager2 with Views",                        "intent" to activityToIntent(CardViewActivity::class.java.name)))
-        myData.add(mapOf("title" to "ViewPager2 with Fragments",                    "intent" to activityToIntent(CardFragmentActivity::class.java.name)))
+//        myData.add(mapOf("title" to "ViewPager2 with Views",                        "intent" to activityToIntent(CardViewActivity::class.java.name)))
+//        myData.add(mapOf("title" to "ViewPager2 with Fragments",                    "intent" to activityToIntent(CardFragmentActivity::class.java.name)))
         myData.add(mapOf("title" to "ViewPager2 with a TabLayout (Views)",          "intent" to activityToIntent(CardViewTabLayoutActivity::class.java.name)))
         myData.add(mapOf("title" to "ViewPager2 with PageTransformers",             "intent" to activityToIntent(PageTransformerActivity::class.java.name)))
 //        myData.add(mapOf("title" to "ViewPager2 with Fake Dragging",                      "intent" to activityToIntent(FakeDragActivity::class.java.name)))
@@ -73,6 +75,7 @@ class BrowseActivity : ListActivity() {
 //        myData.add(mapOf("title" to "ViewPager2 with a Preview of Next/Prev Page",        "intent" to activityToIntent(PreviewPagesActivity::class.java.name)))
 //        myData.add(mapOf("title" to "ViewPager2 with a Mutable Collection (Views)",       "intent" to activityToIntent(MutableCollectionViewActivity::class.java.name)))
 //        myData.add(mapOf("title" to "ViewPager2 with a Mutable Collection (Fragments)",   "intent" to activityToIntent(MutableCollectionFragmentActivity::class.java.name)))
+        myData.add(mapOf("title" to "ViewPager2 with a TabLayout (Views) ZZ",       "intent" to activityToIntent(CARDVIEWTABLAYOUTACTIVITY_ok::class.java.name)))
 
         return myData
     }

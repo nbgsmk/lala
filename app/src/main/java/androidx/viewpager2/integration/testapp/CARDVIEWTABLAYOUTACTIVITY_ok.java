@@ -1,6 +1,9 @@
 package androidx.viewpager2.integration.testapp;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,7 +21,11 @@ public class CARDVIEWTABLAYOUTACTIVITY_ok extends CARDVIEWACTIVITY_ok {
         super.onCreate(savedInstanceState);
         layoutId = R.layout.activity_tablayout;
         tabLayout = findViewById(R.id.tabs);
-
+        LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
+        View vv = inflater.inflate(R.layout.activity_tablayout, null);
+//        setContentView(R.layout.activity_tablayout);
+//        tabLayout = vv.findViewById(R.id.tabs);
+//        viewPager = vv.findViewById(R.id.view_pager);
 
         new TabLayoutMediator(tabLayout, viewPager, false, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override

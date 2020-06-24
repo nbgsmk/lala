@@ -115,6 +115,8 @@ abstract class BASECARDACTIVITY_ok extends FragmentActivity {
 
 
     private SpinnerAdapter createCardAdapter() {
+        new CARD_ok.DECKKK().getDECK();
+
         ArrayAdapter<CARD_ok> adapter = new ArrayAdapter<CARD_ok>(this, android.R.layout.simple_spinner_item, CARD_ok.DECK);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         return adapter;
