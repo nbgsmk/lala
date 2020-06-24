@@ -20,9 +20,9 @@ public class CARDVIEWTABLAYOUTACTIVITY_ok extends CARDVIEWACTIVITY_ok {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         layoutId = R.layout.activity_tablayout;
-        tabLayout = findViewById(R.id.tabs);
         LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
-        View vv = inflater.inflate(R.layout.activity_tablayout, null);
+        View vv = inflater.inflate(layoutId, null);
+        tabLayout = vv.findViewById(R.id.tabs);
 //        setContentView(R.layout.activity_tablayout);
 //        tabLayout = vv.findViewById(R.id.tabs);
 //        viewPager = vv.findViewById(R.id.view_pager);
